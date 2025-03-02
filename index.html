@@ -10,8 +10,34 @@
 <body>
     <div class="top-text">
         <h1 class="title">My Library</h1>
-        <p class="text">In this project I've built a library using Objects and Object contructors - You can check out the code <a href="https://github.com/holysama/odin-library">here</a></p>
-        <button type="submit">Add Book</button>
+        <p class="p-text">In this project I've built a library using Objects and Object contructors - You can check out the code <a href="https://github.com/holysama/odin-library">here</a></p>
+        <button class="btn-addbook" onclick="showForm()">Add Book</button>
+        
+        
+        <div class="overlay" style="display: none;"></div>
+        <form class="book-form" action="#" method="post" style="display: none;">
+            <div class="flex-form-container">
+                <div class="b-text">Add new book</div>
+                
+                <div>
+                    <label for="title">Book Title:</label>
+                    <input type="text" name="book_title" id="title">
+                </div>
+
+                <div>
+                    <label for="author">Author:</label>
+                    <input type="text" name="book_author" id="author">
+                </div>
+
+                <div>
+                    <label for="pages">Pages:</label>
+                    <input type="text" name="book_pages" id="pages">
+                </div>
+            </div>
+        </form>
+
+        
+        
     </div>
 
     <div class="cards-grid">
