@@ -16,7 +16,13 @@ function addBookToLibrary() {
     let book = new Book(title, author, pages, read);
 
     return myLibrary.push(book);
-    
+}
+
+function clearFormInput() {
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("pages").value = "";
+    document.getElementById("read").value = "";
 }
 
 function toggleForm() {
