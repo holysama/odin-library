@@ -11,7 +11,7 @@
     <div class="top-text">
         <h1 class="title">My Library</h1>
         <p class="p-text">In this project I've built a library using Objects and Object contructors - You can check out the code <a href="https://github.com/holysama/odin-library">here</a></p>
-        <button class="btn-addbook" onclick="showForm()">Add Book</button>
+        <button class="btn-addbook" onclick="toggleForm()">Add Book</button>
         
         
         <div class="overlay" style="display: none;"></div>
@@ -28,10 +28,24 @@
                     <label for="author">Author:</label>
                     <input type="text" name="book_author" id="author">
                 </div>
-
+                
                 <div>
                     <label for="pages">Pages:</label>
-                    <input type="text" name="book_pages" id="pages">
+                    <input type="number" name="book_pages" id="pages" min="1">
+                </div>
+
+                <div>
+                    <label for="read">Status:</label>
+                    <select name="book_read" id="read"> 
+                       <option value="Read">Read</option>
+                       <option value="Not Read">Not Read</option>
+                       <option value="reading">Reading</option>
+                    </select>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn-cancel" onclick="toggleForm()" type="button">Cancel</button>
+                    <button class="btn-submit" onclick="addBookToLibrary(); toggleForm()" type="button">Add Book</button>
                 </div>
             </div>
         </form>
