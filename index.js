@@ -18,6 +18,16 @@ function addBookToLibrary() {
     return myLibrary.push(book);
 }
 
+function createCard() {
+    let card = document.createElement("div");
+    card.classList.add("card");
+
+    let cardsGrid = document.querySelector(".cards-grid");
+
+
+    cardsGrid.appendChild(card);
+}
+
 function clearFormInput() {
     document.getElementById("title").value = "";
     document.getElementById("author").value = "";
@@ -38,5 +48,7 @@ function toggleForm() {
         overlay.style.display = "none"
     }
 }
+
+
 
 
