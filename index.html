@@ -21,22 +21,22 @@
                 
                 <div>
                     <label for="title">Book Title:</label>
-                    <input type="text" name="book_title" autocomplete="off" id="title">
+                    <input type="text" name="book_title" autocomplete="off" id="title" required>
                 </div>
 
                 <div>
                     <label for="author">Author:</label>
-                    <input type="text" name="book_author" autocomplete="off" id="author">
+                    <input type="text" name="book_author" autocomplete="off" id="author" required>
                 </div>
                 
                 <div>
                     <label for="pages">Pages:</label>
-                    <input type="number" name="book_pages" autocomplete="off" min="1" id="pages" >
+                    <input type="number" name="book_pages" autocomplete="off" min="1" id="pages" required>
                 </div>
 
                 <div>
                     <label for="read">Status:</label>
-                    <select name="book_read" id="read"> 
+                    <select name="book_read" id="read" required> 
                        <option value="Read">Read</option>
                        <option value="Not Read">Not Read</option>
                        <option value="reading">Reading</option>
@@ -45,7 +45,7 @@
 
                 <div class="buttons">
                     <button class="btn-cancel" onclick="clearFormInput(); toggleForm()" type="button">Cancel</button>
-                    <button class="btn-submit" onclick="addBookToLibrary(); createCard(); clearFormInput(); toggleForm()" type="button">Add Book</button>
+                    <button class="btn-submit" onclick="addBookToLibrary()" type="button">Add Book</button>
                 </div>
             </div>
         </form>
@@ -54,7 +54,7 @@
         
     </div>
 
-    <div class="cards-grid">
+    <div class="flex-cards">
         
     </div>
 
