@@ -47,7 +47,7 @@ function createCard() {
 
         let status = document.createElement("div");
         status.classList.add("card-status");
-        status.textContent = `Title: ${myLibrary[i].read}`;
+        status.textContent = `${myLibrary[i].read}`;
 
         card.appendChild(title);
         card.appendChild(author);

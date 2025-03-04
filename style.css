@@ -2,6 +2,7 @@
     --primary-font-color: #F8F9FA;
     --book-form-color: #F8F9FA;
     --book-card-fontColor: #212529;
+    --book-card-hover-color: #F8F9FA;
     --button-bg-color: #F8F9FA;
     --items-bg-color: #212529;
     --items-border: 4px solid #212529;
@@ -130,6 +131,7 @@ input, #read {
 
 .flex-cards {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 50px;
     gap: 30px;
@@ -146,11 +148,53 @@ input, #read {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    width: 150px;
+    height: 175px;
+    transition: 0.25s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: -5px -5px #6C757D;
+    color: var(--book-card-fontColor);
+    background-color: var(--book-card-hover-color);
+    border-color: #212529;
+}
+
+.card:hover .card-title {
+    background-color: #212529; 
+    color: var(--primary-font-color); 
+}
+
+.card-title,
+.card-author, 
+.card-pages, 
+.card-status {
+    padding: 0px 5px;
+}
+
+.card-pages {
+    margin-top: auto;
 }
 
 .card-title {
     background-color: #6C757D;
-    font-size: 25px;
+    font-size: 17.5px;
     font-weight: bold;
-    padding: 0px 8px;
+    
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-width: 158px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-author {
+    margin-top: 25px;
+    
+}
+
+.card-pages {
+    font-weight: bold;
 }
