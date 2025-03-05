@@ -45,9 +45,26 @@ function createCard() {
         pages.classList.add("card-pages");
         pages.textContent = `${myLibrary[i].pages} Pages`;
 
-        let status = document.createElement("div");
-        status.classList.add("card-status");
-        status.textContent = `${myLibrary[i].read}`;
+        let selectRead = document.createElement("select");
+        selectRead.classList.add("card-status");
+        selectRead.setAttribute("name", "status");
+        selectRead.setAttribute("id", "status-book");
+
+        let statuses = ["Read", "Not Read", "Reading"];
+
+        statuses.forEach(status => {
+            let option = document.createElement("option");
+            option.setAttribute("value", status);
+            option.textContent = status;
+
+            if (myLibrary[i].read === status) {
+                option.selected = true;
+            }
+
+            selectRead.appendChild(option);
+        });
+
+        selectRead.addEventListener
 
         let removeBtn = document.createElement("button");
         removeBtn.classList.add("remove-btn");
@@ -67,19 +84,18 @@ function createCard() {
 
         let icon = document.createElement("i");
         icon.classList.add("fa-solid", "fa-trash-can");
+        removeBtn.appendChild(icon)
 
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
-        card.appendChild(status);
-        removeBtn.appendChild(icon)
+        card.appendChild(selectRead);
         card.appendChild(removeBtn);
         cardsFlex.appendChild(card);
 
 
     };
 }
-
 
 
 function clearFormInput() {

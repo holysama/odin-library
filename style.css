@@ -167,8 +167,7 @@ input, #read {
 
 .card-title,
 .card-author, 
-.card-pages, 
-.card-status {
+.card-pages {
     padding: 0px 5px;
 }
 
@@ -197,6 +196,10 @@ input, #read {
 
 .card-pages {
     font-weight: bold;
+}
+
+.card-status {
+    margin-left: 5px;
 }
 
 .remove-btn {
