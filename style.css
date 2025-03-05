@@ -198,3 +198,29 @@ input, #read {
 .card-pages {
     font-weight: bold;
 }
+
+.remove-btn {
+    align-self: flex-end;
+    font-size: 17.5px;
+    color: var(--book-card-fontColor);
+    background-color: var(--button-bg-color);
+    border: 2px solid white;
+    padding: 0px 4px;
+    
+    box-shadow: 2px 2px #6C757D;
+    transition: 0.25s ease-in-out;
+}
+
+.card:hover .remove-btn {
+    border: 2px solid #212529;
+    box-shadow: -2px -2px #6C757D;
+    color: white;
+    background-color: var(--items-bg-color);
+}
+
+.card:hover .remove-btn:hover {
+    color: var(--book-card-fontColor);
+    background-color: var(--button-bg-color);
+    box-shadow: 2px 2px #6C757D;
+    border: 2px solid #212529;
+}

@@ -49,14 +49,38 @@ function createCard() {
         status.classList.add("card-status");
         status.textContent = `${myLibrary[i].read}`;
 
+        let removeBtn = document.createElement("button");
+        removeBtn.classList.add("remove-btn");
+        removeBtn.setAttribute("data-index-number", i);
+        removeBtn.addEventListener("mouseenter", () => {
+            removeBtn.classList.add("fa-bounce");
+        });
+        removeBtn.addEventListener("mouseleave", () => {
+            removeBtn.classList.remove("fa-bounce");
+        });
+
+        removeBtn.addEventListener("click", () => {
+            let index = Number(removeBtn.dataset.indexNumber);
+            myLibrary.splice(index, 1);
+            createCard();
+        });
+
+        let icon = document.createElement("i");
+        icon.classList.add("fa-solid", "fa-trash-can");
+
         card.appendChild(title);
         card.appendChild(author);
         card.appendChild(pages);
         card.appendChild(status);
-
+        removeBtn.appendChild(icon)
+        card.appendChild(removeBtn);
         cardsFlex.appendChild(card);
+
+
     };
 }
+
+
 
 function clearFormInput() {
     document.getElementById("title").value = "";
