@@ -64,7 +64,17 @@ function createCard() {
             selectRead.appendChild(option);
         });
 
-        selectRead.addEventListener
+        selectRead.addEventListener("change", (event) => {
+            if (event.target.value === "Read") {
+                myLibrary[i].read = "Read";
+            } else if (event.target.value === "Not Read") {
+                myLibrary[i].read = "Not Read";
+            } else {
+                myLibrary[i].read = "Reading";
+            }
+        })
+
+        
 
         let removeBtn = document.createElement("button");
         removeBtn.classList.add("remove-btn");
@@ -96,7 +106,6 @@ function createCard() {
 
     };
 }
-
 
 function clearFormInput() {
     document.getElementById("title").value = "";
